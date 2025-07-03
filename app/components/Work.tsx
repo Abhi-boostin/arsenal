@@ -15,35 +15,40 @@ const projects = [
 
 export default function Work() {
   return (
-    <section className="w-full bg-black py-6 px-2 sm:px-4 md:px-8 flex flex-col items-center">
-      <div className="w-full max-w-3xl">
-        <h2 className="text-white text-[22px] xs:text-[28px] sm:text-[36px] md:text-[48px] font-bold leading-tight mb-2 break-words">
-          Featured Work
-        </h2>
-        <p className="text-white/70 text-xs xs:text-sm sm:text-base font-medium tracking-wide uppercase mb-6 break-words">
-          A SELECTION OF OUR MOST PASSIONATELY CRAFTED WORKS WITH FORWARD-THINKING CLIENTS AND FRIENDS OVER THE YEARS.
-        </p>
-        <div className="flex flex-col gap-5">
+    <section className="w-full min-h-[600px] flex flex-col items-center justify-center bg-black py-0">
+      <div className="w-full max-w-5xl min-h-[600px] flex flex-col items-start justify-center py-2 px-2 sm:px-4 md:px-8 box-border">
+        <div className="mb-8 sm:mb-12 w-full">
+          <h2 className="text-white text-[22px] xs:text-[28px] sm:text-[36px] md:text-[48px] lg:text-[64px] font-bold leading-tight break-words w-full">
+            Featured Work
+          </h2>
+          <p className="mt-3 sm:mt-4 text-white/70 text-xs xs:text-sm sm:text-base font-medium tracking-wide uppercase max-w-full sm:max-w-md break-words">
+            A SELECTION OF OUR MOST PASSIONATELY CRAFTED WORKS WITH FORWARD-THINKING CLIENTS AND FRIENDS OVER THE YEARS.
+          </p>
+        </div>
+        <div className="w-full flex flex-col gap-3 sm:gap-6">
           {projects.map((project, idx) => (
-            <div key={idx} className="w-full border-b border-white/10 pb-4 last:border-b-0">
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
-                <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2 w-full">
-                  <span className="font-bold text-white text-base xs:text-lg sm:text-xl break-words max-w-full">
+            <div
+              key={idx}
+              className="w-full flex flex-col gap-1 border-b border-white/10 pb-4 md:pb-2"
+            >
+              <div className="w-full flex flex-col xs:flex-row xs:items-center xs:justify-between gap-1 xs:gap-2">
+                <div className="flex flex-col xs:flex-row xs:items-center xs:gap-2 w-full overflow-x-auto">
+                  <span className="font-bold text-white text-base xs:text-lg sm:text-xl break-words max-w-full whitespace-pre-line">
                     <GlitchTypewriter text={project.title} />
                   </span>
-                  <span className="text-white/70 text-xs xs:text-sm sm:text-base sm:ml-2 break-words max-w-full">
+                  <span className="text-white/70 text-xs xs:text-sm sm:text-base xs:ml-2 break-words max-w-full">
                     {project.desc}
                   </span>
                 </div>
-                <span className="text-white/50 text-xs xs:text-sm sm:text-lg min-w-[40px] text-right mt-1 sm:mt-0">
+                <span className="text-white/50 text-xs xs:text-sm sm:text-lg min-w-[40px] text-right mt-1 xs:mt-0">
                   {project.year}
                 </span>
               </div>
-              <div className="flex flex-row flex-wrap gap-2 mt-2">
+              <div className="flex flex-row flex-wrap gap-2 mt-1">
                 {project.skills.map((skill, sidx) => (
                   <span
                     key={sidx}
-                    className="inline-flex items-center px-2 py-1 rounded-md bg-white/5 text-white/80 text-xs font-medium border border-white/10 backdrop-blur-sm max-w-full truncate"
+                    className="inline-flex items-center px-2 py-1 sm:px-3 rounded-md bg-white/5 text-white/80 text-xs font-medium border border-white/10 backdrop-blur-sm max-w-full truncate"
                   >
                     {skill}
                   </span>
